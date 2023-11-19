@@ -1,9 +1,11 @@
 sample:
   property: sample
 
-#spring:
+spring:
  # config:
   #  import: "configserver:http://localhost:8885"
+  config:
+    import: "configserver:http://localhost:8885"
   #cloud:
   #  config:
   #    uri: http://config-server:8888
