@@ -2,4 +2,11 @@ sample:
   property: sample
   value: example
 
+spring:
+  cloud:
+    config:
+      fail-fast: true #it may be desirable to fail the startup of a service if it cannot connect to the Config Server.
+      retry:
+        max-attempts: 30 # retry configuration retrieval up to 100 times
+        max-interval: 8000 # max backoff interval
 
