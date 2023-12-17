@@ -1,8 +1,12 @@
 sample:
   property: sample
   value: example
-  
+
+#Publish Application(Register with Eureka)
 eureka:
   client:
-    serviceUrl: # This information must be given to which Eureka Server address the application will connect to.
-      defaultZone: http://localhost:8761/eureka/
+    service-url: # This information must be given to which Eureka Server address the application will connect to.
+      default-zone: http://${DISCOVERY_SERVICE_HOST:localhost}:8761/eureka
+  # instance id for eureka server
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
