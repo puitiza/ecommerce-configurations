@@ -7,14 +7,5 @@ eureka:
   instance: # instance id for eureka server
     instance-id: ${spring.application.name}:${random.value}
   client:
-    service-url: # This information must be given to which Eureka Server address the application will connect to.
+    service-url: # This information must be given to which Eureka Server address the application will connect.
       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
-
-spring:
-  cloud:
-    config: 
-      label: main  # The label must correspond with the branch name in the GitHub
-      fail-fast: true #Not running until OK
-      retry:
-        max-attempts: 30 # retry configuration retrieval up to 100 times
-        max-interval: 8000 # max backoff interval
