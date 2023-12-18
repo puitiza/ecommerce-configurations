@@ -14,3 +14,10 @@ spring:
         max-attempts: 30 # retry configuration retrieval up to 100 times
         max-interval: 8000 # max backoff interval
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
